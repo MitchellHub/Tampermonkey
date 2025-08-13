@@ -1,15 +1,20 @@
 // ==UserScript==
 // @name         Power Platform Env CSS Warning
-// @version      1.0.2
+// @version      1.0.3
 // @description  Apply background-color styles pages where URL contains a specific 'environment' tag (specifically for power platform portal).
 // @match        *://*/*
 // @run-at       document-start
 // @grant        none
 // ==/UserScript==
-
 (function () {
-  const TARGET_UUID = '0b31f62d-4202-e9cd-a054-3ecce9abbccd';
-  if (!location.href.includes(TARGET_UUID)) return;
+  const URL_SUBSTRINGS_TO_MATCH = [
+    'e7794321-b7dd-ef2d-845c-e11ca4080cc2',
+    '35a99107-4f86-4c09-a907-0bb27c1efda7'
+  ];
+
+  const href = location.href.toLowerCase();
+  const matches = URL_SUBSTRINGS_TO_MATCH.some(t => href.includes(String(t).toLowerCase()));
+  if (!matches) return;
 
   const CSS = `
     .o365sx-navbar { background-color: #f22723 !important; }
