@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Power Platform Env CSS Warning
-// @version      1.0.3
+// @version      1.0.4
 // @description  Apply background-color styles pages where URL contains a specific 'environment' tag (specifically for power platform portal).
 // @match        *://*/*
 // @run-at       document-start
