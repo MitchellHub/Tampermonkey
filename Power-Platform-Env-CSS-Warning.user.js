@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Power Platform Env CSS Warning
-// @version      1.0.6
+// @version      1.0.7
 // @description  Apply background-color styles pages where URL contains a specific 'environment' tag (specifically for power platform portal).
 // @match        *://*/*
 // @run-at       document-start
@@ -11,7 +11,6 @@
     'e7794321-b7dd-ef2d-845c-e11ca4080cc2',
     '35a99107-4f86-4c09-a907-0bb27c1efda7'
   ];
-// comment from github
   const href = location.href.toLowerCase();
   const matches = URL_SUBSTRINGS_TO_MATCH.some(t => href.includes(String(t).toLowerCase()));
   if (!matches) return;
